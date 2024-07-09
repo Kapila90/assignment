@@ -1,24 +1,40 @@
-import logo from './logo.svg';
+
+import Welcome from './Components/Welcome';
+import UserForm from './Components/USerForm';
+import Loading from './Components/Loading.js';
+import { CounterProvider } from './Components/counterContext.js';
+import CounterIncrement from './Components/CounterIncrement.js';
+import CounterDisplay from './Components/CounterDisplay.js';
+import Header from './Components/Header.js';
 import './App.css';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Header/>
+
+
+    <Welcome/>
+   
+    <Loading/>
+   
+    
+    <UserForm/>
+    
+
+    
+<h1>
+    <CounterProvider>
+
+      <CounterIncrement />
+      
+      <CounterDisplay />
+    
+    </CounterProvider>
+    </h1>
+   
+    </>
   );
 }
 
